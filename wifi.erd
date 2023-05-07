@@ -1,0 +1,43 @@
+classDiagram
+direction BT
+class bookmarkgroup {
+   varchar(255) bookmarkname
+   int(255) ordernum
+   datetime creationdate
+   datetime modifydate
+   int(11) id
+}
+class bookmarkjoin {
+   varchar(255) wifiid
+   int(255) bookmarkid
+   datetime creationdate
+   int(11) id
+}
+class history {
+   double lat
+   double lnt
+   timestamp date
+   int(11) id
+}
+class wifiInfo {
+   varchar(100) X_SWIFI_WRDOFC
+   varchar(100) X_SWIFI_MAIN_NM
+   varchar(100) X_SWIFI_ADRES1
+   varchar(100) X_SWIFI_ADRES2
+   varchar(100) X_SWIFI_INSTL_FLOOR
+   varchar(100) X_SWIFI_INSTL_TY
+   varchar(100) X_SWIFI_SVC_SE
+   varchar(100) X_SWIFI_CMCWR
+   char(4) X_SWIFI_CNSTC_YEAR
+   char(10) X_SWIFI_INOUT_DOOR
+   varchar(100) X_SWIFI_REMARS3
+   varchar(30) WORK_DTTM
+   varchar(100) X_SWIFI_INSTL_MBY
+   double LNT
+   double LAT
+   double distance_km
+   varchar(100) X_SWIFI_MGR_NO
+}
+
+bookmarkjoin  -->  bookmarkgroup : bookmarkid:id
+bookmarkjoin  -->  wifiInfo : wifiid:X_SWIFI_MGR_NO
